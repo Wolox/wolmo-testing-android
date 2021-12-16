@@ -71,5 +71,6 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     implementation "androidx.test.ext:junit:$android_test_junit_version"
     implementation "androidx.test.espresso:espresso-core:$espresso_version"
+    implementation "androidx.test.espresso:espresso-intents:$espresso_version"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_testing_version"
 }

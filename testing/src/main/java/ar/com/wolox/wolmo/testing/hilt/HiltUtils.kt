@@ -1,5 +1,6 @@
 package ar.com.wolox.wolmo.testing.hilt
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +10,7 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.core.internal.deps.dagger.internal.Preconditions
 import ar.com.wolox.wolmo.testing.R
 
-inline fun <reified T : Fragment> launchFragmentInHiltContainer(
+inline fun <reified T : Fragment> launchFragment(
     fragmentArgs: Bundle? = null,
     crossinline action: Fragment.() -> Unit = {}
 ): T {
