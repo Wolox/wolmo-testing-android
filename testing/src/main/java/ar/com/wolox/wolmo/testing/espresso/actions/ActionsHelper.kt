@@ -7,20 +7,22 @@ import androidx.test.espresso.action.ViewActions.longClick
 import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.matcher.ViewMatchers.withId
 
-fun scrollAndClick(vararg viewIds: Int) {
-    viewIds.forEach {
-        onView(withId(it)).perform(scrollTo(), click())
+object ActionsHelper {
+    fun scrollAndClick(vararg viewIds: Int) {
+        viewIds.forEach {
+            onView(withId(it)).perform(scrollTo(), click())
+        }
     }
-}
 
-fun scrollAndDoubleClick(vararg viewIds: Int) {
-    viewIds.forEach {
-        onView(withId(it)).perform(scrollTo(), doubleClick())
+    fun scrollAndDoubleClick(vararg viewIds: Int) {
+        viewIds.forEach {
+            onView(withId(it)).perform(scrollTo(), doubleClick())
+        }
     }
-}
 
-fun scrollAndLongClick(vararg viewIds: Int) {
-    viewIds.forEach {
-        onView(withId(it)).perform(scrollTo(), longClick())
+    fun scrollAndLongClick(vararg viewIds: Int) {
+        viewIds.forEach {
+            onView(withId(it)).perform(scrollTo(), longClick())
+        }
     }
 }

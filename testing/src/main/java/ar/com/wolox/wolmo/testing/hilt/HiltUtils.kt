@@ -10,7 +10,7 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.core.internal.deps.dagger.internal.Preconditions
 import ar.com.wolox.wolmo.testing.R
 
-inline fun <reified T : Fragment> launchFragment(
+inline fun <reified T : Fragment> launchHiltFragment(
     fragmentArgs: Bundle? = null,
     crossinline action: Fragment.() -> Unit = {}
 ): T {

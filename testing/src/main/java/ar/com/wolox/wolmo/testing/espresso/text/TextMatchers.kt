@@ -8,32 +8,34 @@ import androidx.test.espresso.matcher.ViewMatchers.withHint
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 
-fun checkTextMatches(vararg match: Pair<Int, String>) {
-    match.forEach {
-        onView(withId(it.first)).check(matches(withText(it.second)))
+object TextMatchers {
+    fun checkTextMatches(vararg match: Pair<Int, String>) {
+        match.forEach {
+            onView(withId(it.first)).check(matches(withText(it.second)))
+        }
     }
-}
 
-fun checkHintMatches(vararg match: Pair<Int, String>) {
-    match.forEach {
-        onView(withId(it.first)).check(matches(withHint(it.second)))
+    fun checkHintMatches(vararg match: Pair<Int, String>) {
+        match.forEach {
+            onView(withId(it.first)).check(matches(withHint(it.second)))
+        }
     }
-}
 
-fun checkErrorText(vararg match: Pair<Int, String>) {
-    match.forEach {
-        onView(withId(it.first)).check(matches(hasErrorText(it.second)))
+    fun checkErrorText(vararg match: Pair<Int, String>) {
+        match.forEach {
+            onView(withId(it.first)).check(matches(hasErrorText(it.second)))
+        }
     }
-}
 
-fun checkPopUpText(vararg stringResId: Int) {
-    stringResId.forEach {
-        onView(withText(it)).check(
-            matches(
-                ViewMatchers.withEffectiveVisibility(
-                    ViewMatchers.Visibility.VISIBLE
+    fun checkPopUpText(vararg stringResId: Int) {
+        stringResId.forEach {
+            onView(withText(it)).check(
+                matches(
+                    ViewMatchers.withEffectiveVisibility(
+                        ViewMatchers.Visibility.VISIBLE
+                    )
                 )
             )
-        )
+        }
     }
 }
