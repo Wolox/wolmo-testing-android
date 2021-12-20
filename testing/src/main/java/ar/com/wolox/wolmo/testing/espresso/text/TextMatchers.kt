@@ -8,23 +8,24 @@ import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
 import androidx.test.espresso.matcher.ViewMatchers.withHint
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import ar.com.wolox.wolmo.testing.model.Assertion
 
 object TextMatchers {
-    fun checkTextMatches(vararg match: Pair<Int, String>) {
+    fun checkTextMatches(vararg match: Assertion) {
         match.forEach {
-            onView(withId(it.first)).check(matches(withText(it.second)))
+            onView(withId(it.viewId)).check(matches(withText(it.expectedString)))
         }
     }
 
-    fun checkHintMatches(vararg match: Pair<Int, String>) {
+    fun checkHintMatches(vararg match: Assertion) {
         match.forEach {
-            onView(withId(it.first)).check(matches(withHint(it.second)))
+            onView(withId(it.viewId)).check(matches(withHint(it.expectedString)))
         }
     }
 
-    fun checkErrorText(vararg match: Pair<Int, String>) {
+    fun checkErrorText(vararg match: Assertion) {
         match.forEach {
-            onView(withId(it.first)).check(matches(hasErrorText(it.second)))
+            onView(withId(it.viewId)).check(matches(hasErrorText(it.expectedString)))
         }
     }
 

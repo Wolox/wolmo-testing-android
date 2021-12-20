@@ -37,7 +37,7 @@ inline fun <reified T : Fragment> launchHiltFragment(
                 it.arguments = fragmentArgs
                 activity.supportFragmentManager
                     .beginTransaction()
-                    .add(android.R.id.content, it, "")
+                    .add(android.R.id.content, it, it::class.java.name)
                     .commitNow()
 
                 it.action()
