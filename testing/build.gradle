@@ -3,6 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'idea'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'maven-publish'
+
+group = 'com.github.Wolox'
 
 idea {
     module {
@@ -29,13 +32,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     testOptions {
         unitTests {
             includeAndroidResources = true
@@ -66,6 +72,19 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 artifacts {
     archives sourcesJar
     archives javadocJar
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.Wolox'
+                artifactId = 'wolmo-android-testing'
+                version = '0.1.0'
+            }
+        }
+    }
 }
 
 ext {
