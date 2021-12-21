@@ -5,8 +5,19 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import ar.com.wolox.wolmo.testing.model.Assertion
 
 object VisibilityMatchers {
+
+    /**
+     * This method checks if the given views' visibility is set to Visibility.VISIBLE.
+     *
+     * @param viewId
+     * <pre>{@code
+     * checkIsVisible(R.id.myImageView, R.id.myTextView)
+     * }
+     * </pre>
+     */
     fun checkIsVisible(vararg viewId: Int) {
         viewId.forEach {
             onView(withId(it))
@@ -20,6 +31,15 @@ object VisibilityMatchers {
         }
     }
 
+    /**
+     * This method checks if the given views' visibility is set to Visibility.GONE.
+     *
+     * @param viewId
+     * <pre>{@code
+     * checkIsGone(R.id.myImageView, R.id.myTextView)
+     * }
+     * </pre>
+     */
     fun checkIsGone(vararg viewId: Int) {
         viewId.forEach {
             onView(withId(it)).check(
@@ -32,6 +52,15 @@ object VisibilityMatchers {
         }
     }
 
+    /**
+     * This method checks if the given views' visibility is set to Visibility.INVISIBLE.
+     *
+     * @param viewId
+     * <pre>{@code
+     * checkIsInvisible(R.id.myImageView, R.id.myTextView)
+     * }
+     * </pre>
+     */
     fun checkIsInvisible(vararg viewId: Int) {
         viewId.forEach {
             onView(withId(it)).check(
@@ -44,12 +73,30 @@ object VisibilityMatchers {
         }
     }
 
+    /**
+     * This method checks if the given views are enabled.
+     *
+     * @param viewId
+     * <pre>{@code
+     * checkIsEnabled(R.id.myImageView, R.id.myTextView)
+     * }
+     * </pre>
+     */
     fun checkIsEnabled(vararg viewId: Int) {
         viewId.forEach {
             onView(withId(it)).check(matches(ViewMatchers.isEnabled()))
         }
     }
 
+    /**
+     * This method checks if the given views are disabled.
+     *
+     * @param viewId
+     * <pre>{@code
+     * checkIsDisabled(R.id.myImageView, R.id.myTextView)
+     * }
+     * </pre>
+     */
     fun checkIsDisabled(vararg viewId: Int) {
         viewId.forEach {
             onView(withId(it)).check(matches(ViewMatchers.isNotEnabled()))
