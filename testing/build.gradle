@@ -38,10 +38,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-
     testOptions {
         unitTests {
             includeAndroidResources = true
@@ -81,7 +77,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.Wolox'
                 artifactId = 'wolmo-android-testing'
-                version = '0.1.0'
+                version = '0.1.2'
             }
         }
     }
