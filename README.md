@@ -6,7 +6,7 @@ This module provides a suite of methods to improve the process of writing instru
 
 This project is developed and maintained by [Wolox](http://www.wolox.com.ar).
 
-![Wolox](https://user-images.githubusercontent.com/50247351/146973273-9cca946f-4811-44f4-9e00-53dd0e3ec120.png)
+<img height="118px" width="426px" src="https://user-images.githubusercontent.com/50247351/146973273-9cca946f-4811-44f4-9e00-53dd0e3ec120.png"/>
 
 ## <a name="topic-license"></a> License
 
