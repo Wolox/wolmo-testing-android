@@ -1,6 +1,36 @@
+[![Release](https://jitpack.io/v/Wolox/wolmo-testing-android.svg)](https://jitpack.io/v/Wolox/wolmo-testing-android.svg)
+
 # <a name="topic-title"></a> Wolmo Testing Android
 
 This module provides a suite of methods to improve the process of writing instrumentation tests with [Espresso](https://developer.android.com/training/testing/espresso), while also providing implementations to support fragment testing with [Hilt](https://dagger.dev/hilt/).
+
+## <a name="topic-installation"></a> Installation
+
+### Gradle
+
+First, add this at the end of your root build.gradle:
+
+```groovy
+allprojects {
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+Then, add the dependency in your module's build.gradle:
+
+```groovy
+androidTestImplementation 'com.github.Wolox:wolmo-testing-android:$wolmo_testing_version'
+```
+
+## <a name="topic-contributing"></a> Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push your branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
 
 ## <a name="topic-about"></a> About
 

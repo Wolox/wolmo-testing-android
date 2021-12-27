@@ -20,8 +20,8 @@ android {
     defaultConfig {
         minSdk 24
         targetSdk 31
-        versionCode 1
-        versionName "0.0.1"
+        versionCode 3
+        versionName "0.1.2"
 
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -95,17 +95,18 @@ ext {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_plugin_version"
 
-    implementation "junit:junit:$junit_version"
-    implementation "com.google.dagger:hilt-android-testing:$hilt_version"
-    implementation "androidx.arch.core:core-testing:$arch_core_testing_version"
-    implementation "com.google.dagger:hilt-android:$hilt_version"
+    api 'androidx.core:core-ktx:1.7.0'
+    api 'androidx.appcompat:appcompat:1.4.0'
+
+    api "junit:junit:$junit_version"
+    api "com.google.dagger:hilt-android-testing:$hilt_version"
+    api "androidx.arch.core:core-testing:$arch_core_testing_version"
+    api "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-    implementation "androidx.test.ext:junit:$android_test_junit_version"
-    implementation "androidx.test.espresso:espresso-core:$espresso_version"
-    implementation "androidx.test.espresso:espresso-intents:$espresso_version"
+    api "androidx.test.ext:junit:$android_test_junit_version"
+    api "androidx.test.espresso:espresso-core:$espresso_version"
+    api "androidx.test.espresso:espresso-intents:$espresso_version"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_testing_version"
 }
