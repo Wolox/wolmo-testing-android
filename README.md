@@ -21,7 +21,7 @@ allprojects {
 Then, add the dependency in your module's build.gradle:
 
 ```groovy
-androidTestImplementation 'com.github.Wolox:wolmo-testing-android:$wolmo_testing_version'
+androidTestImplementation "com.github.Wolox:wolmo-testing-android:$wolmo_testing_version"
 ```
 
 ## <a name="topic-contributing"></a> Contributing
