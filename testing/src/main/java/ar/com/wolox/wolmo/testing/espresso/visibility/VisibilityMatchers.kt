@@ -102,4 +102,60 @@ object VisibilityMatchers {
             onView(withId(it)).check(matches(ViewMatchers.isNotEnabled()))
         }
     }
+
+    /**
+     * This method checks if the given views are clickable.
+     *
+     * @param viewId
+     * <pre>{@code
+     * checkIsClickable(R.id.myImageView, R.id.myTextView)
+     * }
+     * </pre>
+     */
+    fun checkIsClickable(vararg viewId: Int) {
+        viewId.forEach {
+            onView(withId(it)).check(matches(ViewMatchers.isClickable()))
+        }
+    }
+
+    /**
+     * This method checks if the given views are not clickable.
+     *
+     * @param viewId
+     * <pre>{@code
+     * checkIsNotClickable(R.id.myImageView, R.id.myTextView)
+     * }
+     * </pre>
+     */
+    fun checkIsNotClickable(vararg viewId: Int) {
+        viewId.forEach {
+            onView(withId(it)).check(matches(ViewMatchers.isNotClickable()))
+        }
+    }
+
+    /**
+     * This method checks if the given view has focus.
+     *
+     * @param viewId
+     * <pre>{@code
+     * checkIsFocused(R.id.myImageView)
+     * }
+     * </pre>
+     */
+    fun checkIsFocused(viewId: Int) {
+        onView(withId(viewId)).check(matches(ViewMatchers.isFocused()))
+    }
+
+    /**
+     * This method checks if the given view does not have focus.
+     *
+     * @param viewId
+     * <pre>{@code
+     * checkIsNotFocused(R.id.myImageView)
+     * }
+     * </pre>
+     */
+    fun checkIsNotFocused(viewId: Int) {
+        onView(withId(viewId)).check(matches(ViewMatchers.isNotFocused()))
+    }
 }
