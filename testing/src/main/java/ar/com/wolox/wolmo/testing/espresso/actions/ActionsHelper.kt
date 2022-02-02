@@ -2,6 +2,7 @@ package ar.com.wolox.wolmo.testing.espresso.actions
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.ViewAction
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -34,6 +35,36 @@ object ActionsHelper {
     fun singleClick(vararg viewId: Int) {
         viewId.forEach {
             onView(withId(it)).perform(click())
+        }
+    }
+
+    /**
+     * Use this method to long click a view.
+     *
+     * @param viewId the ID of the view you want to click.
+     * <pre>{@code
+     * longClick(R.id.myButton)
+     * }
+     * </pre>
+     */
+    fun longClick(vararg viewId: Int) {
+        viewId.forEach {
+            onView(withId(it)).perform(ViewActions.longClick())
+        }
+    }
+
+    /**
+     * Use this method to double click a view.
+     *
+     * @param viewId the ID of the view you want to click.
+     * <pre>{@code
+     * doubleClick(R.id.myButton)
+     * }
+     * </pre>
+     */
+    fun doubleClick(vararg viewId: Int) {
+        viewId.forEach {
+            onView(withId(it)).perform(ViewActions.doubleClick())
         }
     }
 }
