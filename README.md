@@ -1,5 +1,9 @@
 [![Release](https://jitpack.io/v/Wolox/wolmo-testing-android.svg)](https://jitpack.io/v/Wolox/wolmo-testing-android.svg)
 
+<p align="center">
+<img height="140px" width="400px" src="https://user-images.githubusercontent.com/50247351/152792701-c5be5057-15e7-4377-a383-9dd17c827129.png"/>
+</p>
+
 # <a name="topic-title"></a> Wolmo Testing Android
 
 This module provides a suite of methods to improve the process of writing instrumentation tests with [Espresso](https://developer.android.com/training/testing/espresso), while also providing implementations to support fragment testing with [Hilt](https://dagger.dev/hilt/).
